@@ -1,0 +1,1 @@
+{"vaults":{"conbox":{"path":"/home/gitpod/obsidian/obsidian-MD-felixatter","ts":"1662312579","open":true}}}

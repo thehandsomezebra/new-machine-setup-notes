@@ -130,6 +130,22 @@ cat  /home/`whoami`/.ssh/github.pub
 # 2. install obsidian via snap.
 # 3. pre-set in the obsidian defaults that point to all the right places
 # 4. ... done?
+
+
+
+# mkdir /home/`whoami`/obsidian
+# cd into that
+# git clone ...obsidian-MD-felixatter
+# 
+
+
+cd /home/`whoami`/snap/obsidian/current/.config/obsidian/
+
+echo "{\"vaults\":{\"conbox\":{\"path\":\"/home/`whoami`/obsidian/obsidian-MD-felixatter\",\"ts\":\"`date +%s`\",\"open\":true}}}" > obsidian.json
+
+
+
+
 ###########
 
 
