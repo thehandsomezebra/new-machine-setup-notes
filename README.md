@@ -101,13 +101,15 @@ sudo snap install --dangerous Obsidian.snap
 
 ssh-keygen -t ed25519 -C `git config --get user.email` -f /home/`whoami`/.ssh/github
 
-#now output the public
+#now output the public key
 
 cat  /home/`whoami`/.ssh/github.pub
 
+#^^ copy it to your clipboard
+
 #open this link
 # https://github.com/settings/keys
-# and paste in that public
+# and paste the public key you copied into a new key here.
 
 
 ###########
