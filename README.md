@@ -19,9 +19,21 @@
 
 
 
+# quick thing to install ansible
+```
+# pull down this repo... then run:
+sh bin/install-ansible.sh
+```
+
+# run the full ansible playbook:
+```
+ansible-playbook full_playbook.yml -K --extra-vars "computer_user=`whoami`"
+```
 
 
-# commands to run:
+
+
+# this is all the commands to run... convert this crap to ansible
 
 ```
 

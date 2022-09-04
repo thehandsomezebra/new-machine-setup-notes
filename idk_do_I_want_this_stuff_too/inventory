@@ -1,0 +1,6 @@
+[my_machine]
+localhost
+
+
+[my_machine:vars]
+ansible_user={{ lookup('env', 'USER') }}
