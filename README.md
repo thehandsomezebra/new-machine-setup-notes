@@ -69,7 +69,7 @@ sudo apt install -y sublime-text
 # oh, by the way... -q is quiet. -qq is quiet with assume -y yes
 
 sudo apt-get -qq install git
-git config --global user.email "YOUREMAIL@GMAIL>COM"
+git config --global user.email "YourEmail@gmail.com"
 git config --global user.name  "YOUR NAME"
 
 ###########
@@ -93,6 +93,24 @@ sudo snap install --dangerous Obsidian.snap
 ###########
 
 
+
+###########
+
+
+#make a key for github
+
+ssh-keygen -t ed25519 -C `git config --get user.email` -f /home/`whoami`/.ssh/github
+
+#now output the public
+
+cat  /home/`whoami`/.ssh/github.pub
+
+#open this link
+# https://github.com/settings/keys
+# and paste in that public
+
+
+###########
 
 
 ```
