@@ -112,8 +112,6 @@ cat  /home/`whoami`/.ssh/github.pub
 # and paste the public key you copied into a new key here.
 
 
-## additionally 
-
 ###########
 
 
