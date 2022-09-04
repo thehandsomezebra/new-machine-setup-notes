@@ -1,0 +1,18 @@
+---
+- name: Main Playbook
+  hosts: localhost
+  connection: local
+  user: "{{ computer_user }}"
+  become: yes
+  # pre_tasks:
+  # - name: Pretask | Update apt cache
+  #   apt: update_cache=yes
+
+  # ^^^ this is from
+  # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+
+
+  roles: 
+    - boilerplate
+    - setup_git
+

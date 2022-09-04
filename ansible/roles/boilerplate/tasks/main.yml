@@ -1,0 +1,7 @@
+---
+- name: boilerplate
+  shell: |
+    echo "boilerplate"
+  
+- debug:
+    msg: "Yay! it got here!"

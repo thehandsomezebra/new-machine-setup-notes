@@ -1,0 +1,8 @@
+---
+
+tmp: "/tmp/ansible"
+
+yourname: "First Last"
+youremail: "bogus.email@gmail.com"
+
+
