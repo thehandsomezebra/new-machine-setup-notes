@@ -112,7 +112,37 @@ cat  /home/`whoami`/.ssh/github.pub
 # and paste the public key you copied into a new key here.
 
 
+## additionally 
+
 ###########
+
+
+###########
+# do a git pull on the obsidian repo to somewhere we like mutually..
+# open that repo in obsidian
+# turn on the git syncing plugin
+# get it set up how we want with all those nice plugins there.
+# NEXT
+# identify the Default obsidian file after it is installed with snap
+# find exactly how it's set up with the first open obsidian folder & repo n stuff
+# pull all that down into something that we'll throw into the ansible file
+#
+#this way we can do in ansible
+# 1. after authed appropriately to git, do a git pull on private obsidian repo
+# 2. install obsidian via snap.
+# 3. pre-set in the obsidian defaults that point to all the right places
+# 4. ... done?
+###########
+
+
+###########
+# plug in thumbdrive with secrets.. 
+# Ansible will look for folder called grimlock
+# copy all contents to ~/.ssh/
+# MAKE SURE TO CP WITH CHMOD 644!! 
+# 
+###########
+
 
 
 ```
