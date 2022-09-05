@@ -2,7 +2,7 @@
 
 tmp: "/tmp/ansible"
 
-yourname: "First M Last"
-youremail: "bogus2.email@gmail.com"
+git_author: "username"
+git_email: "bogus2.email@gmail.com"
 
 

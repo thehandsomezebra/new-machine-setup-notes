@@ -10,12 +10,12 @@
 
 - name: We will use this username
   debug:
-    msg: "{{yourname}}"
+    msg: "{{git_author}}"
 
 
 - name: We will use this email
   debug:
-    msg: "{{youremail}}"
+    msg: "{{git_email}}"
 
 
 
@@ -40,8 +40,8 @@
 
 - name: setup git name
   shell: |
-    git config --global user.email "{{yourname}}"
+    git config --global user.email "{{git_author}}"
 
 - name: setup git user email
   shell: |
-    git config --global user.name  "{{youremail}}"
+    git config --global user.name  "{{git_email}}"

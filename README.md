@@ -78,8 +78,8 @@ sudo apt install -y sublime-text
 # oh, by the way... -q is quiet. -qq is quiet with assume -y yes
 
 sudo apt-get -qq install git
-git config --global user.email "YourEmail@gmail.com"
-git config --global user.name  "YOUR NAME"
+git config --global user.email "YourcoolEmail@gmail.com"
+git config --global user.name  "yourusername"
 
 ###########
 
