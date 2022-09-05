@@ -29,6 +29,5 @@
   become: true
   apt:
     name: sublime-text
-    state: present
 
 

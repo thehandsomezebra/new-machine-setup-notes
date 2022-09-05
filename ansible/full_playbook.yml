@@ -28,11 +28,11 @@
   roles: 
     # - boilerplate
     # - distro_upgrade
-    # - setup_git
-    # - install_brave
-    # - install_sublime
-    # - install_docker
-    # - install_obsidian
+    - setup_git
+    - install_brave
+    - install_sublime
+    - install_docker
+    - install_obsidian
     - copy_grimlock_ssh_keys
 
 

@@ -8,7 +8,6 @@
   become: true
   apt:
     name: snapd
-    state: present
 
 
 # - name: Apt install docker.io
