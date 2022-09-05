@@ -5,13 +5,10 @@
 # and the drop them in your .ssh folder with the right perms
 
 
-- name: Find the thumb drive
-  shell: |
-    sudo fdisk -l /dev/sda | grep '^/dev' | cut -d' ' -f1
-  register: thumbdrive
-
-
-#TODO: this is expecting just 1 drive.. I should turn this into a block and loop
+# - name: Find the thumb drive
+#   shell: |
+#     sudo fdisk -l /dev/sda | grep '^/dev' | cut -d' ' -f1
+#   register: thumbdrive
 
 
 # - name: Mount the thumb drive
@@ -51,3 +48,16 @@
 # - name: Unmount the thumb drive
 #   shell: |
 #     sudo umount {{ thumbdrive.stdout }}
+
+
+
+
+# TODO: IGNORE ALL THE STUFF ABOVE
+
+#ubuntu automatically will mount a thumbdrive! 
+# ugh, so no need to mount/unmount.
+
+# search recursively for folder named grimlock in all of
+# the folders inside of 
+# /media/`whoami`
+

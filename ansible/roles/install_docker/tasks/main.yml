@@ -4,10 +4,10 @@
 # for just docker. (we might need more packages for user's needs?)
 
 
-- name: Install/update supporting software
-  become: true
-  apt:
-    name: snapd
+# - name: Install/update supporting software
+#   become: true
+#   apt:
+#     name: snapd
 
 
 # - name: Apt install docker.io
@@ -19,9 +19,38 @@
 
 # ^^ we'll just use snap instead:
 
-- name: Use snap to install docker
-  become: true
-  community.general.snap:
-    name:
-      - docker
+# - name: Use snap to install docker
+#   become: true
+#   community.general.snap:
+#     name:
+#       - docker
 
+
+
+# TODO: REWRITE THIS! 
+# TODO: per this: https://docs.docker.com/engine/install/ubuntu/
+
+
+# Set up the repository
+# Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+#  sudo apt-get update
+#  sudo apt-get install \
+#     ca-certificates \
+#     curl \
+#     gnupg \
+#     lsb-release
+# Add Docker’s official GPG key:
+
+#  sudo mkdir -p /etc/apt/keyrings
+#  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+# Use the following command to set up the repository:
+
+#  echo \
+#   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+#   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# Install Docker Engine
+# Update the apt package index, and install the latest version of Docker Engine, containerd, and Docker Compose, or go to the next step to install a specific version:
+
+#  sudo apt-get update
+#  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
