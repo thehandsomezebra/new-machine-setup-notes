@@ -28,7 +28,7 @@
   roles: 
     # - boilerplate
     # - distro_upgrade
-    - setup_git
+    # - setup_git
     - install_brave
     - install_sublime
     - install_docker
