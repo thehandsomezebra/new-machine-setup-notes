@@ -1,0 +1,28 @@
+---
+###########
+# The following block of code should install what you need
+# for just docker. (we might need more packages for user's needs?)
+
+
+- name: Install/update supporting software
+  become: true
+  apt:
+    name: snapd
+    state: present
+
+
+# - name: Apt install docker.io
+#   become: true
+#   apt:
+#     pkg:
+#       - docker.io
+#     state: latest
+
+# ^^ we'll just use snap instead:
+
+- name: Use snap to install docker
+  become: true
+  community.general.snap:
+    name:
+      - docker
+

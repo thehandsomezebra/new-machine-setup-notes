@@ -1,0 +1,46 @@
+---
+###########
+# The following block of code should install what you need
+# for the latest version of Obsidian.
+
+
+- name: Install/update supporting software
+  become: true
+  apt:
+    pkg:
+      - snapd
+      - curl
+    state: latest
+
+
+- name: Check latest version of Obsidian
+  become: true
+  shell: |
+    curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest  | grep "browser_download_url.*snap" | tail -n 1 | cut -d '"' -f 4 
+  register: obsidian_version_snap
+
+
+- name: This is the version we're installing, by the way
+  debug:
+    msg: "{{obsidian_version_snap.stdout}}"
+
+
+- name: Download that version of obsidian
+  become: true
+  shell: |
+    curl --location --output  {{ tmp }}/Obsidian.snap "{{ obsidian_version_snap.stdout }}"
+
+
+- name: Install Obsidian 
+  become: true
+  shell: |
+    sudo snap install --dangerous {{ tmp }}/Obsidian.snap
+    
+# ^ since it was downloaded...we need to allow dangerous.
+
+## and I wish I could change this to the ansible community snap..
+## but it looks like they don't support --dangerous as a tag
+# https://docs.ansible.com/ansible/latest/collections/community/general/snap_module.html
+## oh well... shell will work for now
+
+

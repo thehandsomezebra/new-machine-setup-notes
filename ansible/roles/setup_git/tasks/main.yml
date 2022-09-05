@@ -1,39 +1,47 @@
 ---
-#this is only commented out since I'm testing on a mac..
-# - name: Install git
-#   apt:
-#     name: git
-#     state: present
-#     update_cache: yes
+# this is only commented out since I'm testing on a mac..
+- name: Install git
+  become: true
+  apt:
+    name: git
+    state: present
 
-
-
-# - name: say words
-#   debug:
-#     msg:  "we'll keep tweaking this to make it awesome."
-
-
-
-# - block:
-#   - name: What name to use for git commits
-#     pause:
-#       prompt: |
-#           What's your name?
-#     register: yourname
-#   when: yourname is undefined
 
 
 - name: We will use this username
   debug:
     msg: "{{yourname}}"
-    # msg: "{{yourname.user_input if yourname.user_input is defined else yourname}}"
 
-# - block:
-#   - name: What email address to use for git commits
-#     pause:
-#       prompt: |
-#           What's your email address?
-#     register: youremail
-  # when: youremail is undefined
-  
 
+- name: We will use this email
+  debug:
+    msg: "{{youremail}}"
+
+
+
+# this crap below is what I'd like to use.. 
+# but apparently today isn't my lucky day, lol
+# I'll try again later - I know it's  perhaps 
+# because of user scoped
+
+# - name: setup git name
+#   git_config:
+#     name: user.name
+#     scope: global
+#     value: "John Doe"
+
+# - name: setup git user email
+#   git_config:
+#     name: user.email
+#     scope: global
+#     value: user@example.com
+
+
+
+- name: setup git name
+  shell: |
+    git config --global user.email "{{yourname}}"
+
+- name: setup git user email
+  shell: |
+    git config --global user.name  "{{youremail}}"

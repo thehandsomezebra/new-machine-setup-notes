@@ -1,0 +1,53 @@
+---
+###########
+# This is going to find your grimlock folder 
+# on a thumbdrive you plugged in (which should have your keys)
+# and the drop them in your .ssh folder with the right perms
+
+
+- name: Find the thumb drive
+  shell: |
+    sudo fdisk -l /dev/sda | grep '^/dev' | cut -d' ' -f1
+  register: thumbdrive
+
+
+#TODO: this is expecting just 1 drive.. I should turn this into a block and loop
+
+
+# - name: Mount the thumb drive
+#   shell: |
+#     sudo mkdir {{ tmp }}/thumbdrive_mount
+#     sudo mount {{ thumbdrive.stdout }} {{ tmp }}/thumbdrive_mount
+
+
+# - name: Look for grimlock folder
+#   find:
+#     paths: "{{ tmp }}/thumbdrive_mount"
+#     recurse: yes
+#     file_type: directory
+#     # excludes: 'nginx,mysql'
+#   with_items: output
+
+
+
+# - name: We will use this 
+#   debug:
+#     msg: "{{output}}"
+
+
+
+
+
+# - name: Copy grimlock folder
+#   copy:
+#     src: /mine/ntp.conf
+#     dest: /etc/ntp.conf
+#     owner: root
+#     group: root
+#     mode: 0644
+
+
+
+# - name: Unmount the thumb drive
+#   shell: |
+#     sudo umount {{ thumbdrive.stdout }}

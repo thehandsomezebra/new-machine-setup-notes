@@ -27,7 +27,7 @@ sh bin/install-ansible.sh
 
 # run the full ansible playbook:
 ```
-ansible-playbook full_playbook.yml -K --extra-vars "computer_user=`whoami`"
+ansible-playbook ansible/full_playbook.yml -K --extra-vars "computer_user=`whoami`"
 ```
 
 
@@ -47,6 +47,7 @@ sudo apt update
 # We can parse this down later.
 
 sudo apt install apt-transport-https curl
+
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -67,10 +68,6 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/sublimetext-keyring.gpg] htt
 sudo apt update
 sudo apt install -y sublime-text
 
-
-# later, I can have it do -- if installed already, then update it using this:
-# sudo apt update
-# sudo apt --only-upgrade sublime-text
 ###########
 
 
@@ -86,6 +83,12 @@ git config --global user.name  "YOUR NAME"
 
 ###########
 
+
+###########
+sudo apt update
+sudo apt install docker.io
+sudo snap install docker
+###########
 
 
 
@@ -147,13 +150,13 @@ cat  /home/`whoami`/.ssh/github.pub
 
 # mkdir /home/`whoami`/obsidian
 # cd into that
-# git clone ...obsidian-MD-felixatter
+# git clone ...obsidian-repo
 # 
 
 
 cd /home/`whoami`/snap/obsidian/current/.config/obsidian/
 
-echo "{\"vaults\":{\"conbox\":{\"path\":\"/home/`whoami`/obsidian/obsidian-MD-felixatter\",\"ts\":\"`date +%s`\",\"open\":true}}}" > obsidian.json
+echo "{\"vaults\":{\"conbox\":{\"path\":\"/home/`whoami`/obsidian/obsidian-repo\",\"ts\":\"`date +%s`\",\"open\":true}}}" > obsidian.json
 
 
 

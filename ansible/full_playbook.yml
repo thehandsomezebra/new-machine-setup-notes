@@ -3,16 +3,36 @@
   hosts: localhost
   connection: local
   user: "{{ computer_user }}"
-  become: yes
-  # pre_tasks:
-  # - name: Pretask | Update apt cache
-  #   apt: update_cache=yes
+  # become: yes
+  # become: no
+  # Default is no.. but I gotta set it manually as true in some things..
+  # but not all things
+  # I'll do it as a case by case basis.
+
+
+  pre_tasks:
+  - name: Pretask | Update apt cache
+    become: true
+    apt: update_cache=yes
+  - name: Create temp ansible folder
+    become: true
+    file:
+      path: "{{ tmp }}"
+      state: directory
+
 
   # ^^^ this is from
   # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
 
 
   roles: 
-    - boilerplate
-    - setup_git
+    # - boilerplate
+    # - distro_upgrade
+    # - setup_git
+    # - install_brave
+    # - install_sublime
+    # - install_docker
+    # - install_obsidian
+    - copy_grimlock_ssh_keys
+
 
